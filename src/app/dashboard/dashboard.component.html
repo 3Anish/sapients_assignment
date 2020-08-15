@@ -1,0 +1,36 @@
+<div class="p-grid">
+  <div class="p-col-12 p-md-6 p-lg-3" *ngFor="let d of allData; let x = index">
+    <p-card>
+      <p-header>
+        <img src="{{ d.links.mission_patch_small }}" alt="image" />
+      </p-header>
+      <h4 style="color: #424d9d;">
+        {{ d.mission_name }} #{{ d.flight_number }}
+      </h4>
+      <div>
+        <span style="font-weight: bold; color: black;">Mission Ids: </span>
+        <span>{{ d.mission_id[0] }}</span>
+        <span *ngIf="d.mission_id.length === 0">null</span>
+      </div>
+      <div>
+        <span style="font-weight: bold; color: black;">Launch Year: </span>
+        <span>{{ d.launch_year }}</span>
+      </div>
+      <div>
+        <span style="font-weight: bold; color: black;">
+          Successfull Launch:
+        </span>
+        <span>{{ d.launch_success }}</span>
+      </div>
+      <div>
+        <span style="font-weight: bold; color: black;"
+          >Successfull Landing:
+        </span>
+        <span>{{ d.rocket.first_stage.cores[0].land_success }}</span>
+        <span *ngIf="d.rocket.first_stage.cores[0].land_success === null"
+          >null</span
+        >
+      </div>
+    </p-card>
+  </div>
+</div>

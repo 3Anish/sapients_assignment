@@ -1,0 +1,83 @@
+<div class="container">
+  <h2 class="heading">SpaceX Launch Programs</h2>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-2 p-lg-2">
+      <div class="left-filter">
+        <p-card>
+          <p-header>
+            <h3 class="filter-heading">Filters</h3>
+          </p-header>
+          <div class="filter_headers">Launch year</div>
+          <div class="btn_spacing">
+            <span
+              style="margin: 10px;"
+              *ngFor="let btn of btnValues; let i = index"
+            >
+              <button
+                pButton
+                pRipple
+                class="p-button-sm"
+                type="button"
+                label="{{ btn }}"
+                [ngClass]="{ active: isClicked[i] }"
+                (click)="yearFilter(btn, i)"
+              ></button>
+            </span>
+          </div>
+          <div class="filter_headers">Successful Launch</div>
+          <div class="btn-spacing">
+            <button
+              style="margin: 10px;"
+              pButton
+              class="p-button-sm"
+              pRipple
+              type="button"
+              [ngClass]="{ active: launchClicked[0] }"
+              (click)="successfulLaunch(true)"
+              label="True"
+            ></button>
+            <button
+              style="margin: 10px;"
+              pButton
+              pRipple
+              class="p-button-sm"
+              type="button"
+              [ngClass]="{ active: launchClicked[1] }"
+              (click)="successfulLaunch(false)"
+              label="False"
+            ></button>
+          </div>
+          <div class="filter_headers">Successful Landing</div>
+          <div class="btn-spacing">
+            <button
+              style="margin: 10px;"
+              pButton
+              class="p-button-sm"
+              pRipple
+              type="button"
+              [ngClass]="{ active: landingClicked[0] }"
+              (click)="successfulLanding(true)"
+              label="True"
+            ></button>
+            <button
+              style="margin: 10px;"
+              pButton
+              pRipple
+              class="p-button-sm"
+              type="button"
+              [ngClass]="{ active: landingClicked[1] }"
+              (click)="successfulLanding(false)"
+              label="False"
+            ></button>
+          </div>
+        </p-card>
+      </div>
+    </div>
+    <div class="p-col-12 p-md-10 p-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <h4 style="text-align: center;">
+    Developed By- Anish Kumar Jha(17anish03@gmail.com)
+  </h4>
+</div>

@@ -1,0 +1,45 @@
+.container {
+  background-color: #f2f2f2;
+  margin: 10px;
+}
+.heading {
+  margin-top: 0;
+  padding-left: 12px;
+}
+.btn_spacing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+::ng-deep button.p-button.p-component {
+  background-color: #c5e09b;
+  border: 1px solid #c5e09b;
+  color: black;
+  font-weight: 700;
+  /* padding:4px 14px; */
+}
+::ng-deep button.p-button.p-component:hover {
+  background-color: greenyellow;
+  border: 1px solid greenyellow;
+  color: black;
+}
+
+/* ::ng-deep button.p-button.p-component:enabled:focus{
+  
+    /* padding:4px 14px; */
+
+.active {
+  background-color: #7cba01 !important;
+  border: 1px solid #7cba01 !important;
+  color: black;
+}
+.filter-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+.filter_headers {
+  border-bottom: 1px solid gainsboro;
+  text-align: center;
+}
